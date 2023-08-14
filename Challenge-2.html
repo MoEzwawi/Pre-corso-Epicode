@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrazione music streaming</title>
+    <script>
+        function checkPasswordMatch() {
+            const password = document.getElementById("password").value;
+            const confirm_password = document.getElementById("confirm_password").value;
+            const error_message = document.getElementById("error_message");
+            
+            if (password !== confirm_password) {
+                error_message.innerHTML = "Le password non coincidono.";
+            } else {
+                error_message.innerHTML = "";
+            }
+        }
+    </script>
+    <!-- Momento onestà intellettuale: per questa funzione, che permette di segnalare all'utente che le due password inserite non coincidono, mi sono fatto aiutare da ChatGPT, poiché non ho ancora competenze nell'utilizzo di JavaScript -->
+</head>
+<body>
+    <h1 style="color: red;">Benvenuto in Music Streaming</h1>
+    <img src="./Musichallenge2.jpg" alt="Music streaming" height="200px" width="300px">
+    <h2 style="color: green;">Inserisci di seguito i tuoi dati</h2>
+    
+    <form action="" method="" onsubmit="alert('Registrazione inviata!')">
+        <table>
+            <tr>
+                <td><label for="name">Nome:</label></td>
+                <td><input name="Nome"  type="text" id="name" placeholder="Inserisci il tuo nome..." required></td>
+            </tr>
+            <tr>
+                <td><label for="surname">Cognome</label></td>
+                <td><input name="Cognome"  type="text" id="surname" placeholder="Inserisci il tuo cognome..." required></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail:</label></td>
+                <td><input name="Email"  type="email" id="email" placeholder="Inserisci la tua email..." required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="Password" placeholder="Inserisci la tua password..." required pattern=".{8,}" required></td>
+            </tr>
+            <tr>
+                <td><label for="confirm_password">Conferma Password:</label></td>
+                <td><input type="password" id="confirm_password" name="Conferma Password" placeholder="Conferma la tua password..." required pattern=".{8,}" required oninput="checkPasswordMatch()" required></td>
+            </tr>
+            <tr>
+                <td><label for="birthday">Data di nascita:</label></td>
+                <td><input name="Data di nascita"  type="date" id="birthday" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Numero di telefono:</label></td>
+                <td><input name="Numero di telefono"  type="text" id="phone" required pattern="[0-9]{10}" placeholder="1234567890" required></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Sesso</label></td>
+                <td>
+                    <select name="gender" id="gender">
+                        <option value="male">Maschile</option>
+                        <option value="female">Femminile</option>
+                        <option value="other">Altro</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        
+        <p id="error_message" style="color: red;"></p>
+        
+        <fieldset>
+            <legend>Indica i tuoi generi musicali preferiti</legend>
+            
+            <input type="checkbox" name="Classica" id="Classica">
+            <label for="Classica">Musica classica</label>
+            
+            <input type="checkbox" name="Pop" id="Pop">
+            <label for="Pop">Pop</label>
+            
+            <input type="checkbox" name="Rock" id="Rock">
+            <label for="Rock">Rock</label>
+            
+            <input type="checkbox" name="Rap" id="Rap">
+            <label for="Rap">Rap</label>
+            
+            <input type="checkbox" name="Tecno" id="Tecno">
+            <label for="Tecno">Tecno</label>
+            
+            <input type="checkbox" name="RnB" id="RnB">
+            <label for="RnB">R&B</label>
+            
+            <input type="checkbox" name="Dance" id="Dance">
+            <label for="Dance">Dance</label>
+            
+            <input type="checkbox" name="Cantautorato" id="Cantautorato">
+            <label for="Cantautorato">Cantautorato italiano</label>
+            
+            <input type="checkbox" name="Reggaeton" id="Reggaeton">
+            <label for="Reggaeton">Reggaeton</label>
+            
+            <input type="checkbox" name="EDM" id="EDM">
+            <label for="EDM">EDM</label>
+            
+        </fieldset>
+        <label for="terms" style="color: red;"><b>Accetto termini e condizioni di servizio</b></label>
+        <input type="radio" name="terms" id="terms" required>
+        <br>
+        <button type="submit">Invia registrazione</button>
+        
+        
+    </form>
+</body>
+</html>
